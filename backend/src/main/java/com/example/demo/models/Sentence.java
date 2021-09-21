@@ -1,8 +1,7 @@
-package com.example.demo;
+package com.example.demo.models;
 
-import com.example.demo.Language;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "sentences")
 public class Sentence {
