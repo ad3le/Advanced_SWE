@@ -10,20 +10,6 @@ function App() {
       </header>
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/exercise">Start Game</Link>
-              </li>
-              <li>
-                <Link to="/highscores">Highscores</Link>
-              </li>
-            </ul>
-          </nav>
-
           {/* A <Switch> looks through its children <Route>s and
         renders the first one that matches the current URL. */}
           <Switch>
@@ -44,11 +30,30 @@ function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return (
+    <div>
+      <h2>Home</h2>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/exercise">Start Game</Link>
+          </li>
+          <li>
+            <Link to="/highscores">Highscores</Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 }
 
 function Highscores() {
-  return <h2>Highscores</h2>;
+  return (
+    <div>
+      <h2>Highscores</h2>
+      <Link to="/">Home</Link>
+    </div>
+  );
 }
 
 export default App;
