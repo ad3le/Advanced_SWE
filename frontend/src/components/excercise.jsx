@@ -4,7 +4,7 @@ import Sentence from "./sentence";
 class Exercise extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { answer: "" };
+    this.state = { answer: "", counter: 0 };
   }
 
   handleChange = (event) => {
@@ -15,13 +15,16 @@ class Exercise extends React.Component {
     this.setState({ answer: event.target.value });
   };
 
-  nextSentence = (event) => {
-    //TODO
+  nextSentence = () => {
+    this.setState((prevState) => {
+      return { counter: prevState.counter + 1 };
+    });
   };
 
   render() {
     return (
       <React.Fragment>
+        <h3>counter: {this.state.counter}</h3>
         <form onSubmit={this.onFormSubmit}>
           <label htmlFor="answer">answer</label>
           <input
