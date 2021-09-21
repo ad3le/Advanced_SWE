@@ -1,5 +1,6 @@
 import "./App.css";
 import Exercise from "./components/excercise";
+import Highscores from "./components/highscores";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
@@ -43,15 +44,6 @@ function Home() {
           </li>
         </ul>
       </nav>
-    </div>
-  );
-}
-
-function Highscores() {
-  return (
-    <div>
-      <h2>Highscores</h2>
-      <Link to="/">Home</Link>
     </div>
   );
 }

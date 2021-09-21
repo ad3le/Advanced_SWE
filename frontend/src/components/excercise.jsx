@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Sentence from "./sentence";
+import Highscores from "./highscores";
+import { BrowserRouter as Switch, Route, Redirect } from "react-router-dom";
 
 class Exercise extends React.Component {
   constructor(props) {
@@ -22,26 +24,34 @@ class Exercise extends React.Component {
   };
 
   render() {
-    return (
-      <React.Fragment>
-        <h3>counter: {this.state.counter}</h3>
-        <form onSubmit={this.onFormSubmit}>
-          <label htmlFor="answer">answer</label>
-          <input
-            type="text"
-            name="answer"
-            value={this.state.answer}
-            onChange={this.handleChange}
-          />
-        </form>
-
-        <h3>Your answer is: {this.state.answer}</h3>
-        <div>
-          <Sentence />
-          <button onClick={this.nextSentence}>Next Sentence</button>
-        </div>
-      </React.Fragment>
-    );
+    if (this.state.counter > 10) {
+      return (
+        <Switch>
+          <Redirect to="/highscores" />
+          <Route path="/highscores">
+            <Highscores />
+          </Route>
+        </Switch>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <Sentence counter={this.state.counter} />
+          <form onSubmit={this.onFormSubmit}>
+            <label htmlFor="answer">answer: </label>
+            <input
+              type="text"
+              name="answer"
+              value={this.state.answer}
+              onChange={this.handleChange}
+            />
+          </form>
+          <div>
+            <button onClick={this.nextSentence}>Next Sentence</button>
+          </div>
+        </React.Fragment>
+      );
+    }
   }
 }
 

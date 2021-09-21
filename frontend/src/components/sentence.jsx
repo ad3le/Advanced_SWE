@@ -10,7 +10,7 @@ class Sentence extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: [],
+      sentences: [],
     };
   }
 
@@ -39,11 +39,20 @@ class Sentence extends React.Component {
   render() {
     const { error, isLoaded, sentences } = this.state;
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return (
+        <div>
+          <div>{this.props.counter}</div>
+          <div>Error: {error.message}</div>
+        </div>
+      );
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      return <div>{sentences[0].text} </div>;
+      return (
+        <div>
+          <div>{sentences[this.props.counter].text} </div>
+        </div>
+      );
     }
   }
 }
