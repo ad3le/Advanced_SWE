@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SentenceDisplay from "./sentenceDisplay";
 import Highscores from "./highscores";
 import SentenceInput from "./sentenceInput";
+import SentenceLoader from "./sentenceLoader";
 import { BrowserRouter as Switch, Route, Redirect } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
