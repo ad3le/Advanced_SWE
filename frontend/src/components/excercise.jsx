@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Sentence from "./sentence";
+import SentenceDisplay from "./sentenceDisplay";
 import Highscores from "./highscores";
+import SentenceInput from "./sentenceInput";
 import { BrowserRouter as Switch, Route, Redirect } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Stack from "react-bootstrap/Stack";
@@ -15,10 +16,6 @@ class Exercise extends React.Component {
   }
 
   handleChange = (event) => {
-    this.setState({ answer: event.target.value });
-  };
-
-  onFormSubmit = (event) => {
     this.setState({ answer: event.target.value });
   };
 
@@ -44,21 +41,12 @@ class Exercise extends React.Component {
           <Row>
             <Col>
               <Stack gap={2} className="col-md-5 mx-auto">
-                <Sentence counter={this.state.counter} />
-                <form onSubmit={this.onFormSubmit}>
-                  <label htmlFor="answer"></label>
-                  <input
-                    type="text"
-                    name="answer"
-                    value={this.state.answer}
-                    onChange={this.handleChange}
-                  />
-                </form>
-                <div>
-                  <Button variant="primary" onClick={this.nextSentence}>
-                    Next Sentence
-                  </Button>
-                </div>
+                <SentenceDisplay counter={this.state.counter} />
+                <SentenceInput
+                  answer={this.state.answer}
+                  handleChange={this.handleChange}
+                  nextSentence={this.nextSentence}
+                />
               </Stack>
             </Col>
           </Row>{" "}

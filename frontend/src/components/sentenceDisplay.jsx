@@ -4,7 +4,7 @@ import useFetch from "react-fetch-hook";
 
 const API_URL = "http://localhost:8080/api/sentences/";
 
-class Sentence extends React.Component {
+class SentenceDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,4 +57,4 @@ class Sentence extends React.Component {
   }
 }
 
-export default Sentence;
+export default SentenceDisplay;
