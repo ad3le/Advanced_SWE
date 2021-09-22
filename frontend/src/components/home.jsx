@@ -1,17 +1,16 @@
-import React, { Component } from "react";
-
-import Home from "./home";
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-function Highscores() {
+function Home() {
   return (
     <div>
-      <h2>Highscores</h2>
+      <h2>Home</h2>
       <nav>
         <ul>
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/exercise">Start Game</Link>
+          </li>
+          <li>
+            <Link to="/highscores">Highscores</Link>
           </li>
         </ul>
       </nav>
@@ -19,4 +18,4 @@ function Highscores() {
   );
 }
 
-export default Highscores;
+export default Home;
