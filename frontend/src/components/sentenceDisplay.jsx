@@ -16,7 +16,13 @@ class SentenceDisplay extends React.Component {
             <div>An error happened loading data: {error}</div>
           )}
           successUI={(sentences) => (
+<<<<<<< HEAD
             <div>{sentences[this.props.counter].text} </div>
+=======
+            <div>
+              <div>{sentences[this.props.counter].text} </div>
+            </div>
+>>>>>>> 03b06c7539cd9a3551d619252ed4ebaffad668e2
           )}
         />
       </div>
